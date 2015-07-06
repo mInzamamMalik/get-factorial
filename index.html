@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        p{font-size: 72px;
+          font-family: "Segoe UI Light","Segoe UI Semilight","Segoe UI", serif;
+          color: #66c2ff;
+          text-align: center;
+          text-shadow: 1px 1px 300px black;
+        }
+        p.author{
+            font-size: 32px;
+        }
+        p#oops{
+            color: rgba(255, 0, 0, 0.54);
+            font-size: 28px;
+
+        }
+
+    </style>
+</head>
+<body>
+<br />
+<br />
+<br />
+
+<p id="result"></p>
+<p id="oops"></p>
+<p>     Factorial program     </p>
+<p class="author">by: Inzamam Malik 2225</p>
+
+<script>
+    function factorial(value){
+        value = (value == 0) ? 1 : value;
+        var log = value;
+        if (value > 170) {
+            return Infinity;
+
+
+        } else {
+            for (var a = value - 1; a > 0; a--) {
+                log = log * a;
+            }
+            return log;
+        }
+
+    }
+
+
+    var a, repeat;
+    do{
+        repeat = 0;
+        a = prompt("enter a number to get factorial","5");
+        if(isNaN(a)){
+            alert("only number please, or hit Esc. any time to exit");
+            repeat=1;
+            }
+        else if(a == ""){
+            alert("don't leave the box empty, or hit Esc. any time to exit");
+            repeat=1;
+        }
+        else if(a == null)
+            Exit();
+        else if(+a < 0){
+            alert("please enter a positive value, or hit Esc. any time to exit");
+            repeat=1;
+        }
+
+    }
+    while(repeat == 1);
+
+    document.getElementById("result").innerHTML = a + "!  is equal to  " + factorial(a) + "<hr />" ;
+    if(factorial(a)== Infinity){
+        document.getElementById("oops").innerHTML = "Oops, Bro you have entered a huge value <br />" +
+                " try below 170! or tell me how javaScript can be treat with big values bcz i" +
+                " think this line sounds very bad"
+    }
+
+
+
+</script>
+</body>
+</html>
